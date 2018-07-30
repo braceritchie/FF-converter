@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% load static from staticfiles %}
+{% block content %}
+	<hr>
+<h1 class="text-center">Free online file converter</h1>
+<hr>
+<br>
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-md-4 "><br>Image Converter<br><br>
+            
+            
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='JPEG' %}">Convert to JPEG</a>
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='BMP' %}">Convert to BMP</a>
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='PNG' %}">Convert to PNG</a>
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4 "><br>Document Converter<br><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4"><br>Audio Converter<br><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4 "><br>Hash Generator<br><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  
+        </div>
+
+    </div>
+</div>
+<div>
+    <br>
+    <br>
+    <br>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+{% endblock %}
+
