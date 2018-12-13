@@ -8,7 +8,7 @@
 - Small : For smartphones and all displays with smaller viewports
 ---
 ### Ways to implement responsive font size
-#### Media Queries [CSS - Responsive Font Size - Stack Overflow](https://stackoverflow.com/questions/15649244/responsive-font-size) :
+#### [Media Queries ](https://stackoverflow.com/questions/15649244/responsive-font-size) :
 
 ```css
       @media only screen and (max-width: 320px) {
@@ -19,7 +19,7 @@
     
     }
 ```
-#### Using Viewport Sizes [CSS - Responsive Font Size - Stack Overflow](https://stackoverflow.com/questions/15649244/responsive-font-size) :
+#### [Using Viewport Sizes ](https://stackoverflow.com/questions/15649244/responsive-font-size) :
 ```css
     h1 {
       font-size: 5.9vw;
