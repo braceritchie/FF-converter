@@ -1,1 +1,28 @@
-
+{% extends 'base.html'%}
+{% block content %}
+        <h1>Format Name</h1>
+        
+        <div class="row text-center" style="min-height:400px;" >
+                
+            <div class="col-md-6 "   >
+                <br>
+                <br>
+                <div >
+                    <h4>Convert</h4>    
+                    <button class="btn btn-primary"><h5>Select Files</h5></button>
+                    <h4>From:</h4>
+                    <h6>FormatName1 to FormatName2</h6>
+                    <h4>Files Selected:</h4>
+                    <h6>List of selected files</h6>
+                </div>    
+                    
+            </div>
+            <div class="col-md-6 border bg-success text-white" ><h4>Preview</h4>
+                
+                <h6>No Files To Preview</h6>
+            
+            </div>
+            
+        </div>
+        
+{% endblock %}
