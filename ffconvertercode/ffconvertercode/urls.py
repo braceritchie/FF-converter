@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.home),
     path("imgconverter/", include('imgconverter.urls')),
+    path("docconverter/", include('docconverter.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

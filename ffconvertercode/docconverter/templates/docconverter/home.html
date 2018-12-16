@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static from staticfiles %}
+{% block content %}
+<h1>Convert to {{slug}}</h1>
+<div class="row bg-secondary" >
+    <div class="col-md-2 bg-white"></div>
+    <div class="col-md-4 bg-white border">
+            <h4>From:</h4>
+            {%if formatn%}
+                <h6>{{formatn}} to {{slug}}</h6>
+            {%else%}
+                <h6>Unknown to {{slug}}</h6>
+            {%endif%}
+            <h4>File Selected:</h4>
+            {%if name%}
+                <h6>{{name}}</h6>
+            
+            {%else%}
+                <h6>No file selected</h6>
+            {%endif%}
+            <button type="submit" class="btn btn-primary mb-2 align-baseline ">Submit</button>
+    </div>
+    <div class="col-md-4 bg-secondary  text-center my-auto text-white" >
+        
+        <h4>Convert your Documents easily</h4>
+        <h5>Step 1: Click on browse button to select a file</h5>
+        <h5>Step 2: Press submit button to start conversion</h5>
+        <h5>Step 3: Click download </h5>
+        
+
+    </div>
+    <div class="col-md-2 bg-white"></div>
+
+</div>
+{%endblock%}
