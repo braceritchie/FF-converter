@@ -3,6 +3,8 @@ from .forms import FileField
 from .models import Image1
 from PIL import Image 
 from django.conf import settings
+import os
+from pathlib import Path
 # Create your views here.
 def conv(request,slug):
     if request.method == 'POST':
@@ -27,24 +29,24 @@ def convertFile(im,slug):
         path = im.ImageFile.url
         name = newIm.name
         name = name.split(".")
-                
+        npath = Path("media/")
         print(name)
         Pim = Image.open(newIm)
         rgb_im = Pim.convert('RGB')
         if(slug=="JPEG"):
-                
-                rgb_im.save("media/"+name[0]+".jpg")
+                name[0] = name[0] +".jpg"
+                rgb_im.save(npath / name[0],format='jpeg')
                 downloadpath = path.split(".")
                 return downloadpath[0]+".jpg" , name[1]
         
         elif(slug=="PNG"):
-                
-                rgb_im.save("media/"+name[0]+".png")
+                name[0] = name[0] + ".png"
+                rgb_im.save(npath/name[0],format='png')
                 downloadpath = path.split(".")
                 return downloadpath[0]+".png" , name[1]
         elif(slug=="BMP"):
-                
-                rgb_im.save("media/"+name[0]+".bmp")
+                name[0] = name[0] + ".bmp"
+                rgb_im.save(npath/name[0],format='bmp')
                 downloadpath = path.split(".")
                 return downloadpath[0]+".bmp" , name[1]
         else:
