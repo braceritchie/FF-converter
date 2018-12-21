@@ -25,7 +25,7 @@ SECRET_KEY = 'ln4$l9l14@8l3=(y_-qhfr*4mehac5^x0(_s4#9b(@bf^a4acm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hrii.tk']
 
 
 # Application definition
