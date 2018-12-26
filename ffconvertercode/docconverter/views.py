@@ -10,36 +10,64 @@ from pathlib import Path
 def conv(request,slug):
     if request.method == "POST":
         form = ActFileField(request.POST, request.FILES)
+        filelist = request.FILES.getlist('file1')
+        print(filelist)
         if(form.is_valid()):
-            filefield = File1(FileField = request.FILES['file1'])
-            filefield.save()
-            formatname, downloadpath = convPdf(filefield,filefield.FileField.name)
+                fileobjects = []
+                filenames = []
+                for f in filelist:   
+                        ffield = File1(FileField=f)
+                        ffield.save()
+                        fileobjects.append(ffield)
+                        filenames.append(ffield.FileField.name)
+                        print(fileobjects)
 
-            return render(request, 'docconverter/home.html',{'slug':slug,'formatn':formatname.upper(),'form':form,'name':filefield.FileField.name,'download':downloadpath})
+                
+                
+                formatnames, downloadpath = convPdf(fileobjects[0],fileobjects[0].FileField.name, fileobjects)
+                
+                return render(request, 'docconverter/home.html',{'slug':slug,'formatn':formatnames,'form':form,'name':filenames,'download':downloadpath})
 
 
     form = ActFileField()
     return render(request,"docconverter/home.html",{'slug':slug,'form':form})
 
 
-def convPdf(filefield, filename):
-    imgfileformats = ['png','jpg','jpeg','bmp','JPEG','PNG','JPEG','BMP']
-    nameforfile = filename.split('.')
-    nameforfile, formatforfile = nameforfile[0], nameforfile[1]
-    npath = Path("media/")
-    downloadpath = filefield.FileField.url
-    downloadpath = downloadpath.split(".")
-    downloadpath = downloadpath[0] + '.pdf'
-    
-    if(formatforfile in imgfileformats):
-        Pim = Image.open(filefield.FileField)
-        Pim = Pim.convert("RGB")
+def convPdf(firstobject, filename, fileobjects):
+        pdffilename = nameForPdf(filename)
+        pdfdownloadpath = downloadPathForPdf(firstobject)
+        npath = Path("media/")
+        formatsforfile = []
+        tempfilepaths = []
+        for f in fileobjects:
+                Pim = Image.open(f.FileField)
+                Pim = Pim.convert("RGB")
+                imgname = f.FileField.name.split('.')
+                formatsforfile.append(imgname[1])
+                imgname = imgname[0]+".jpg"
+                Pim.save(npath / imgname,format='jpeg')
+                tempfilepaths.append(str(npath/imgname))
+                print(tempfilepaths)
+                #with open(npath/pdffilename, 'ab') as f1, open(npath/imgname, 'rb') as f2:
+                
+                #        f1.write(img2pdf.convert(f2))
+                
+        with open(npath/pdffilename, 'ab') as f1:
+                
+                f1.write(img2pdf.convert(tempfilepaths))
+
+
+        return formatsforfile, pdfdownloadpath
+   
+
+def nameForPdf(filename):
+        nameforfile = filename.split('.')
+        nameforfile = nameforfile[0]
         pdffilename = nameforfile+'.pdf'
-        newname = nameforfile +".jpg"
-        Pim.save(npath / newname,format='jpeg')
-        with open(npath/pdffilename, 'wb') as f, open(npath/newname, 'rb') as f2:
-            
-            f.write(img2pdf.convert(f2))
-            
-    
-    return formatforfile, downloadpath
+        return pdffilename
+
+def downloadPathForPdf(firstObject):
+        downloadpath = firstObject.FileField.url
+        downloadpath = downloadpath.split(".")
+        downloadpath = downloadpath[0] + '.pdf'
+        return downloadpath

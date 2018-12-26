@@ -9,15 +9,19 @@
             <h4>Convert</h4>
             {{form}}
             <h4>From:</h4>
+            
             {%if formatn%}
-                <h6>{{formatn}} to {{slug}}</h6>
+                {%for i in formatn%}
+                <h6>{{i}} to {{slug}}</h6>
+                {% endfor %}
             {%else%}
                 <h6>Unknown to {{slug}}</h6>
             {%endif%}
-            <h4>File Selected:</h4>
+            <h4>Files Selected:</h4>
             {%if name%}
-                <h6>{{name}}</h6>
-            
+                {% for i in name%}
+                <h6>{{i}}</h6>
+                {% endfor %}
             {%else%}
                 <h6>No file selected</h6>
             {%endif%}
