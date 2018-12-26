@@ -51,8 +51,9 @@ def convPdf(firstobject, filename, fileobjects):
                 #with open(npath/pdffilename, 'ab') as f1, open(npath/imgname, 'rb') as f2:
                 
                 #        f1.write(img2pdf.convert(f2))
-                
-        with open(npath/pdffilename, 'ab') as f1:
+
+        pdfnpath = str(npath/pdffilename)        
+        with open(pdfnpath, 'ab') as f1:
                 
                 f1.write(img2pdf.convert(tempfilepaths))
 
