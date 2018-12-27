@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imgconverter',
     'docconverter',
+    'audconverter',
     'widget_tweaks',
 ]
 

@@ -28,6 +28,7 @@ urlpatterns = [
     path("",views.home,name = 'home'),
     path("imgconverter/", include('imgconverter.urls')),
     path("docconverter/", include('docconverter.urls')),
+    path('audconverter/', include('audconverter.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
