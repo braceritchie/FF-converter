@@ -38,12 +38,18 @@
         <h5>Step 2: Press submit button to start conversion</h5>
         <h5>Step 3: Click download  </h5>
         {% if download %}
-            <a href='{{download}}' download>
+            {%for i in download%}
+            <a href='{{i}}' download>
             <button  class="btn btn-success mb-2 align-baseline " >Download</button>
             </a>
             <br>
+            {% endfor %}
         {% endif %}
-        
+        {%if error %}
+            <div class="bg-danger " style="padding:10px;">
+               <h4> Sorry file format not recognized </h4>
+            </div>
+        {% endif %}
         
 
     </div>
