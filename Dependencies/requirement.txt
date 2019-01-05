@@ -1,0 +1,5 @@
+pypandoc
+pydub
+img2pdf
+Pillow
+#https://pypi.org/project/pypandoc/
