@@ -132,7 +132,7 @@ def convPdf(firstobject, filename, fileobjects, slug):
                 error = 0
                 for f in fileobjects:
                         try:
-                                formatsforfile.append(f.FileField.name)
+                                formatsforfile.append(f.FileField.name.split('.')[1])
                                 mdfilename = nameForMD(f.FileField.name)
                                 mddownloadpath = downloadPathForMD(f)
                                 output = pypandoc.convert_file(str(npath/f.FileField.name), 'md', outputfile=str(npath/mdfilename))
@@ -146,7 +146,7 @@ def convPdf(firstobject, filename, fileobjects, slug):
                 error = 0
                 for f in fileobjects:
                         try:
-                                formatsforfile.append(f.FileField.name)
+                                formatsforfile.append(f.FileField.name.split('.')[1])
                                 htmlfilename = nameForHTML(f.FileField.name)
                                 htmldownloadpath = downloadPathForHTML(f)
                                 output = pypandoc.convert_file(str(npath/f.FileField.name), 'html', outputfile=str(npath/htmlfilename))

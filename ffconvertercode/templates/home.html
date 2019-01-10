@@ -51,15 +51,16 @@
                   </div>
                   
         </div>
-        <div class="col-md-4 "><br><h4>Hash Generator</h4><br>
+        <div class="col-md-4 "><br><h4>Video Converter</h4><br>
             <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Choose format
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='MKV'%}">Convert to MKV</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='MP4'%}">Convert to MP4</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='OGG'%}">Convert to OGG</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='WEBM'%}">Convert to WEBM</a>
                     </div>
                   </div>
                   
