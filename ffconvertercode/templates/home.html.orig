@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{% load static from staticfiles %}
+{% block content %}
+	
+
+
+<br>
+
+<div class="container-fluid">
+    <h1 class="text-center">File Converter</h1>
+    <div class="row text-center">
+        <div class="col-md-4 "><br><h4>Image Converter</h4><br>
+            
+            
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='JPEG' %}">Convert to JPEG</a>
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='BMP' %}">Convert to BMP</a>
+                      <a class="dropdown-item" href="{% url 'imgconverter:filetype' slug='PNG' %}">Convert to PNG</a>
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4 "><br><h4>Document Converter</h4><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{%url 'docconverter:filetype' slug='PDF'%}">Convert to PDF</a>
+                      <a class="dropdown-item" href="{%url 'docconverter:filetype' slug='DOCX'%}">Convert to DOCX</a>
+                      <a class="dropdown-item" href="{%url 'docconverter:filetype' slug='MD'%}">Convert to MD</a>
+                      <a class="dropdown-item" href="{%url 'docconverter:filetype' slug='HTML'%}">Convert to HTML</a>
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4"><br><h4>Audio Converter</h4><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{%url 'audconverter:filetype' slug='WAV'%}">Convert to WAV</a>
+                      <a class="dropdown-item" href="{%url 'audconverter:filetype' slug='MP3'%}">Convert to MP3</a>
+                      
+                    </div>
+                  </div>
+                  
+        </div>
+        <div class="col-md-4 "><br><h4>Video Converter</h4><br>
+            <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Choose format
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='MKV'%}">Convert to MKV</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='MP4'%}">Convert to MP4</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='OGG'%}">Convert to OGG</a>
+                      <a class="dropdown-item" href="{%url 'vidconverter:filetype' slug='WEBM'%}">Convert to WEBM</a>
+                    </div>
+                  </div>
+                  
+        </div>
+
+    </div>
+</div>
+<div>
+    <br>
+    <br>
+    <br>
+    
+    <!--<p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+</div>
+{% endblock %}
+
