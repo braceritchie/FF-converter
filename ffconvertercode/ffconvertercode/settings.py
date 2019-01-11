@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'imgconverter',
     'docconverter',
     'audconverter',
+    'vidconverter',
     'widget_tweaks',
 ]
 

@@ -54,6 +54,40 @@
 
     </div>
     <div class="col-md-2 bg-white"></div>
+    
 
+</div>
+<br>
+<div class="row ">
+    <div class="col-md-2"></div>
+    <div class="col-md-8  border">
+        <h4>Valid Inputs for Conversion</h4>
+        {% if slug == "PDF" %}
+            <h6>jpeg, bmp, png, jpg, commonmark, docbook, docx, epub, haddock, html, json, latex, markdown, markdown\_github, markdown\_mmd, markdown\_phpextra, markdown\_strict, mediawiki, native, odt, opml, org, rst, t2t, textile, twiki.</h6>
+        {% else %}
+        <h6>commonmark, docbook, docx, epub, haddock, html, json, latex, markdown, markdown\_github, markdown\_mmd, markdown\_phpextra, markdown\_strict, mediawiki, native, odt, opml, org, rst, t2t, textile, twiki.</h6>
+
+        {% endif %}
+    </div>
+    
+
+</div>
+<br>
+<div class="row">
+        <div class='col-md-2'></div>
+        <div class="col-md-8  border">
+                <h4>{{slug}} File Format</h4>
+               {% if slug == "PDF" %}
+                    <h6>The Portable Document Format (PDF) is a file format developed by Adobe in the 1990s to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems.</h6>     
+               
+                {% elif slug == "DOCX" %}
+                    <h6>The DOCX file format is used by Microsoft Word 2007 and later versions. It uses the .docx file extension, and is designed to replace the DOC file format used in previous versions of Word. </h6>
+                
+                {% elif slug == "MD" %}
+                    <h6>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor. </h6>
+                {% elif slug == "HTML" %}
+                    <h6>Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web. </h6>
+                    {% endif %}
+        </div>
 </div>
 {%endblock%}
