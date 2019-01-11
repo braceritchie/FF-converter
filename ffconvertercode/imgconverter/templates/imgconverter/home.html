@@ -67,6 +67,33 @@
                 
             </div>
         </div>
-
+        <br>
+        <div class="row ">
+            <div class="col-md-2"></div>
+            <div class="col-md-8  border ">
+                <h4>Valid Inputs for Conversion</h4>
+                <h6>bmp, eps, gif, icns, ico, im, jpeg, jpeg2000, msp, png, tiff, webp, xbm, pcx, ppm, sgi, spider.</h6>
+                
+            </div>
+            
+        
+        </div>
+        <br>
+        <div class="row">
+                <div class='col-md-2'></div>
+                <div class="col-md-8  border">
+                        <h4>{{slug}} File Format</h4>
+                        <h6>
+                            {% if slug == "JPEG" %}
+                            JPEG is a commonly used method of lossy compression for digital images, particularly for those images produced by digital photography. The degree of compression can be adjusted, allowing a selectable tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little perceptible loss in image quality.
+                            {% elif slug == "BMP" %}
+                            The BMP file format, also known as bitmap image file or device independent bitmap (DIB) file format or simply a bitmap, is a raster graphics image file format used to store bitmap digital images, independently of the display device (such as a graphics adapter), especially on Microsoft Windows and OS/2 operating systems. 
+                            {% elif slug == "PNG" %}
+                            Portable Network Graphics is a raster-graphics file-format that supports lossless data compression. PNG developed as an improved, non-patented replacement for Graphics Interchange Format (GIF). 
+                            {% endif %}
+                        </h6>
+                       
+                </div>
+        </div>
         
 {% endblock %}

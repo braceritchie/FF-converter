@@ -29,6 +29,7 @@ urlpatterns = [
     path("imgconverter/", include('imgconverter.urls')),
     path("docconverter/", include('docconverter.urls')),
     path('audconverter/', include('audconverter.urls')),
+    path("vidconverter/", include('vidconverter.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

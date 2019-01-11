@@ -38,41 +38,47 @@ def convertFile(aud,slug):
     if(slug=="WAV"):
         name[0] = name[0]+".wav"
         newaud=pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath / name[0],format='wav')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='wav')
         downloadpath = path.split(".")
         return downloadpath[0]+".wav" , name[1]
 
     elif(slug=="MP3"):
         name[0] = name[0]+".mp3"
         newaud = pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath/name[0],format='mp3')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='mp3')
         downloadpath = path.split(".")
         return downloadpath[0]+".mp3" , name[1]
 
     elif(slug=="MP2"):
         name[0] = name[0]+".mp2"
         newaud = pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath/name[0],format='mp2')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='mp2')
         downloadpath =path.split(".")
         return downloadpath[0]+".mp2", name[1]
 
     elif(slug == "OGA"):
         name[0] = name[0]+".oga"
         newaud = pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath/name[0],format='oga')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='oga')
         downloadpath = path.split(".")
         return downloadpath[0]+".oga", name[1]
 
     elif(slug=="OGG"):
         name = name[0]+".ogg"
         newaud = pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath/name[0],format='ogg')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='ogg')
         downloadpath = path.split(".")
         return downloadpath[0]+".ogg", name[1]
 
     elif(slug=="RAW"):
         name[0] = name[0]+".mp3"
         newaud = pydub.AudioSegment.from_file(aud.AudFile)
-        newaud.export(npath/name[0],format='raw')
+        npath = str(npath/name[0])
+        newaud.export(npath,format='raw')
         downloadpath = path.split(".")
         return downloadpath[0]+".raw" , name[1]

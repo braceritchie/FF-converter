@@ -1,0 +1,89 @@
+{%extends 'base.html' %}
+{%block content%}
+<h1>Convert to {{slug}}</h1>
+<div class="row bg-secondary" >
+    <div class="col-md-2 bg-white"></div>
+    <div class="col-md-4 bg-white border">
+            <form enctype="multipart/form-data" method="post" action="{% url 'vidconverter:filetype' slug=slug%}">{% csrf_token %} 
+            <h4>Convert</h4>
+            {{form}}
+            <h4>From:</h4>
+            
+            {%if formatn%}
+                {%for i in formatn%}
+                <h6>{{i}} to {{slug}}</h6>
+                {% endfor %}
+            {%else%}
+                <h6>Unknown to {{slug}}</h6>
+            {%endif%}
+            <h4>Files Selected:</h4>
+            {%if name%}
+                {% for i in name%}
+                <h6>{{i}}</h6>
+                {% endfor %}
+            {%else%}
+                <h6>No file selected</h6>
+            {%endif%}
+            
+            <button type="submit" class="btn btn-primary mb-2 align-baseline ">Submit</button>
+              
+        </form>
+        
+        </div>
+    <div class="col-md-4 bg-secondary  text-center my-auto text-white" >
+        
+        <h4>Convert your Videos easily</h4>
+        <h5>Step 1: Click on browse button to select a file</h5>
+        <h5>Step 2: Press submit button to start conversion</h5>
+        <h5>Step 3: Click download  </h5>
+        {% if download %}
+            {%for i in download%}
+            <a href='{{i}}' download>
+            <button  class="btn btn-success mb-2 align-baseline " >Download</button>
+            </a>
+            <br>
+            {% endfor %}
+        {% endif %}
+        {%if error %}
+            <div class="bg-danger " style="padding:10px;">
+               <h4> Sorry file format not recognized </h4>
+            </div>
+        {% endif %}
+        
+
+    </div>
+    <div class="col-md-2 bg-white"></div>
+    
+
+</div>
+<br>
+<div class="row ">
+    <div class="col-md-2"></div>
+    <div class="col-md-8  border ">
+        <h4>Valid Inputs for Conversion</h4>
+        <h6>MPEG-1 Part 2, H.261 (Px64), H.262/MPEG-2 Part 2, H.263, MPEG-4 Part 2, H.264/MPEG-4 AVC, HEVC/H.265 (MPEG-H Part 2), Motion JPEG, IEC DV video and CD+G MP1, MP2, MP3, AAC, HE-AAC, MPEG-4 ALS, AVI, GIF.</h6>
+        
+    </div>
+    
+
+</div>
+<br>
+<div class="row">
+        <div class='col-md-2'></div>
+        <div class="col-md-8  border">
+                <h4>{{slug}} File Format</h4>
+                <h6>
+                    {% if slug == "MKV" %}
+                    The Matroska Multimedia Container is an open standard, free container format, a file format that can hold an unlimited number of video, audio, picture, or subtitle tracks in one file. It is a universal format for storing common multimedia content, like movies or TV shows.
+                    {% elif slug == "MP4" %}
+                    MPEG-4 Part 14 or MP4 is a digital multimedia container format most commonly used to store video and audio, but it can also be used to store other data such as subtitles and still images. Like most modern container formats, it allows streaming over the Internet.
+                    {% elif slug == "WEBM" %}
+                    WebM is an audiovisual media file format. It is primarily intended to offer a royalty-free alternative to use in the HTML5 video and the HTML5 audio elements. It has a sister project WebP for images. The development of the format is sponsored by Google, and the corresponding software is distributed under a BSD license.
+                    {% elif slug == "OGG"%}
+                    Ogg is a free, open container format maintained by the Xiph.Org Foundation. The creators of the Ogg format state that it is unrestricted by software patents and is designed to provide for efficient streaming and manipulation of high-quality digital multimedia.
+                    {% endif %}
+                </h6>
+               
+        </div>
+</div>
+{%endblock%}
