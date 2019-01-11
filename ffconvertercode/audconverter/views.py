@@ -70,17 +70,9 @@ def convertFile(aud,slug):
         downloadpath = path.split(".")
         return downloadpath[0]+".ogg", name[1]
 
-
-    elif(slug=="MPEG"):
-            name = name[0]+".mpeg"
-            newaud = pydub.AudioSegment.from_file(aud.AudFile)
-            newaud.export(npath/name[0],format='mpeg')
-            downloadpath = path.split(".")
-            return downloadpath[0]+".mpeg", name[1]
-
-    elif(slug=="ALAW"):
-            name = name[0]+".alaw"
-            newaud = pydub.AudioSegment.from_file(aud.AudFile)
-            newaud.export(npath/name[0],format='alaw')
-            downloadpath = path.split(".")
-            return downloadpath[0]+".alaw", name[1]
+    elif(slug=="RAW"):
+        name[0] = name[0]+".mp3"
+        newaud = pydub.AudioSegment.from_file(aud.AudFile)
+        newaud.export(npath/name[0],format='raw')
+        downloadpath = path.split(".")
+        return downloadpath[0]+".raw" , name[1]
