@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from .forms import AudFileField
 from .models import Aud
 import pydub
+from django.conf import settings
 from pathlib import Path
 import os
 
@@ -32,6 +33,7 @@ def convertFile(aud,slug):
     name = newaud.name
     name= name.split(".")
     npath = Path("media/")
+    npath = Path(settings.MEDIA_ROOT)
     print(name)
 
 

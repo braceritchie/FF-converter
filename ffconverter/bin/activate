@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/braceritchie/ffconverter/ffconverter"
+VIRTUAL_ENV="/home/ubuntu/FF-converter/ffconverter"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

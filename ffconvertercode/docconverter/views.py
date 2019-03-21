@@ -4,6 +4,7 @@ import sys
 from .forms import ActFileField
 from .models import File1
 from PIL import Image
+from django.conf import settings
 import img2pdf
 import io
 import pypandoc
@@ -41,7 +42,7 @@ def convPdf(firstobject, filename, fileobjects, slug):
         formatsforfile = []
         if(slug == "PDF"):
                 npath = Path("media/")
-                
+                npath = Path(settings.MEDIA_ROOT)
                 tempfilepaths = []
                 textfromfile = ''
                 output = ''

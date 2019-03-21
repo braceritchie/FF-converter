@@ -1,4 +1,4 @@
-#!/home/braceritchie/ffconverter/ffconverter/bin/python
+#!/home/ubuntu/FF-converter/ffconverter/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

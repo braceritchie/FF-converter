@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import VidFileField
 # Create your views here.
 from .models import FileVid
+from django.conf import settings
 import ffmpeg
 from pathlib import Path
 
@@ -33,6 +34,7 @@ def convVid(fileobjects, filenames, slug):
     formatnames = []
     error = 0
     npath = Path('media/')
+    npath = Path(settings.MEDIA_ROOT)
     try:
         if(slug == "MKV"):
                 for f in fileobjects:
@@ -79,6 +81,7 @@ def convVid(fileobjects, filenames, slug):
                 return downloadpaths, formatnames, error
 
     except:
+            
             error = 1
             return downloadpaths, formatnames, error
 

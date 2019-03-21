@@ -1,4 +1,4 @@
-#!/home/braceritchie/ffconverter/ffconverter/bin/python
+#!/home/ubuntu/FF-converter/ffconverter/bin/python
 
 import sys
 import getopt

@@ -2,4 +2,5 @@ pypandoc
 pydub
 img2pdf
 Pillow
+ffmpeg-python
 #https://pypi.org/project/pypandoc/

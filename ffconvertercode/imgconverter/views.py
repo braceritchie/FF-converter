@@ -30,6 +30,7 @@ def convertFile(im,slug):
         name = newIm.name
         name = name.split(".")
         npath = Path("media/")
+        npath = Path(settings.MEDIA_ROOT) 
         print(name)
         Pim = Image.open(newIm)
         rgb_im = Pim.convert('RGB')
