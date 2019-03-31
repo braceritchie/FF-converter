@@ -1,9 +1,11 @@
 {%extends 'base.html' %}
 {%block content%}
 <h1>Convert to {{slug}}</h1>
-<div class="row bg-secondary" >
-    <div class="col-md-2 bg-white"></div>
-    <div class="col-md-4 bg-white border">
+<div class="container-fluid" style="background: url('/media/81744.jpg') no-repeat ;background-size: cover;">
+    <br>
+<div class="row " >
+    <div class="col-md-2"></div>
+    <div class="col-md-4  border border-dark">
             <form enctype="multipart/form-data" method="post" action="{% url 'vidconverter:filetype' slug=slug%}">{% csrf_token %} 
             <h4>Convert</h4>
             {{form}}
@@ -30,7 +32,7 @@
         </form>
         
         </div>
-    <div class="col-md-4 bg-secondary  text-center my-auto text-white" >
+    <div class="col-md-4 border border-dark        text-dark" >
         
         <h4>Convert your Videos easily</h4>
         <h5>Step 1: Click on browse button to select a file</h5>
@@ -52,14 +54,14 @@
         
 
     </div>
-    <div class="col-md-2 bg-white"></div>
+    <div class="col-md-2 "></div>
     
 
 </div>
 <br>
 <div class="row ">
     <div class="col-md-2"></div>
-    <div class="col-md-8  border ">
+    <div class="col-md-8  border border-dark">
         <h4>Valid Inputs for Conversion</h4>
         <h6>MPEG-1 Part 2, H.261 (Px64), H.262/MPEG-2 Part 2, H.263, MPEG-4 Part 2, H.264/MPEG-4 AVC, HEVC/H.265 (MPEG-H Part 2), Motion JPEG, IEC DV video and CD+G MP1, MP2, MP3, AAC, HE-AAC, MPEG-4 ALS, AVI, GIF.</h6>
         
@@ -70,7 +72,7 @@
 <br>
 <div class="row">
         <div class='col-md-2'></div>
-        <div class="col-md-8  border">
+        <div class="col-md-8  border border-dark">
                 <h4>{{slug}} File Format</h4>
                 <h6>
                     {% if slug == "MKV" %}
@@ -85,5 +87,8 @@
                 </h6>
                
         </div>
+</div>
+<br>
+
 </div>
 {%endblock%}

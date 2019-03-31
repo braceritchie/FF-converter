@@ -3,12 +3,14 @@
 {% load widget_tweaks %}
 {% block content %}
         <h1>Convert to {{slug}}</h1>
+<div class="container-fluid" style="background: url('/media/81744.jpg') no-repeat ;background-size: cover;">
+            <br>
+<div class="container-fluid" >        
         
-        
-        <div class="row bg-secondary"  >
+        <div class="row "  >
                
             
-            <div class="col-md-4 border bg-white"   >
+            <div class="col-md-4 border border-dark "   >
                 
                 <div >
                     
@@ -48,7 +50,7 @@
             </div>
             
             
-            <div class="col-md-4 border bg-white" ><h4>Preview</h4>
+            <div class="col-md-4 border border-dark " ><h4>Preview</h4>
                 <a href="{{download}}" download>
                     
                   
@@ -58,8 +60,8 @@
                 <br>
             </div>
         
-            <div class="col-md-4 bg-secondary text-white text-center my-auto ">
-                    
+            <div class="col-md-4 border border-dark text-dark  ">
+                    <br>                    
                     <h4>Convert your Images easily.</h4>   
                     <h5 >Step 1: Click on browse/choose button to select a file.</h5>
                     <h5>Step 2: Press submit button to start conversion.</h5>
@@ -70,7 +72,7 @@
         <br>
         <div class="row ">
             <div class="col-md-2"></div>
-            <div class="col-md-8  border ">
+            <div class="col-md-8 border border-dark  ">
                 <h4>Valid Inputs for Conversion</h4>
                 <h6>bmp, eps, gif, icns, ico, im, jpeg, jpeg2000, msp, png, tiff, webp, xbm, pcx, ppm, sgi, spider.</h6>
                 
@@ -81,7 +83,7 @@
         <br>
         <div class="row">
                 <div class='col-md-2'></div>
-                <div class="col-md-8  border">
+                <div class="col-md-8 border border-dark ">
                         <h4>{{slug}} File Format</h4>
                         <h6>
                             {% if slug == "JPEG" %}
@@ -95,5 +97,8 @@
                        
                 </div>
         </div>
-        
+        <br>
+ </div>  
+ <br>     
+ </div>
 {% endblock %}

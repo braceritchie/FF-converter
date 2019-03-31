@@ -6,9 +6,12 @@
 {% block content %}
 
 <h1>Convert to {{slug}}</h1>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
+<div class="container-fluid" style="background: url('/media/81744.jpg') no-repeat ;background-size: cover;">
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 border border-dark">
                 <form enctype="multipart/form-data" method="post" action="{% url 'audconverter:filetype' slug=slug%}">{% csrf_token %}
                   <h4>Convert</h4>
                   {% for field in form %}
@@ -44,7 +47,8 @@
                 </form>
 
                 </div>
-                <div class="col-md-4 bg-secondary  text-center my-auto text-white" >
+                
+            <div class="col-md-4 border border-dark  text-dark" >
 
                 <h4>Convert your Audio Files easily</h4>
                 <h5>Step 1: Click on browse button to select a file</h5>
@@ -65,8 +69,41 @@
                 {% endif %}
 
 
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        
+    </div>
+                <br>
+                <div class="row ">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8  border border-dark">
+                            <h4>Valid Inputs for Conversion</h4>
+                            <h6>MPEG-1 Part 2, H.261 (Px64), H.262/MPEG-2 Part 2, H.263, MPEG-4 Part 2, H.264/MPEG-4 AVC, HEVC/H.265  MP1, MP2, MP3, AAC, HE-AAC, MPEG-4 ALS.</h6>
+                            
+                        </div>
                 </div>
-                <div class="col-md-2 bg-white"></div>
+                    <br>
 
-                </div>
+                    <div class="row">
+                            <div class='col-md-2'></div>
+                            <div class="col-md-8  border border-dark">
+                                    <h4>{{slug}} File Format</h4>
+                                    <h6>
+                                        {% if slug == "WAV" %}
+                                        Waveform Audio File Format is a Microsoft and IBM audio file format standard for storing an audio bitstream on PCs.
+                                        {% elif slug == "MP3" %}
+                                        MP3 is a coding format for digital audio. Originally defined as the third audio format of the MPEG-1 standard, it was retained and further extended—defining additional bit-rates and support for more audio channels—as the third audio format of the subsequent MPEG-2 standard.
+                                        {% elif slug == "MP2" %}
+                                        MPEG-1 Audio Layer II or MPEG-2 Audio Layer II is a lossy audio compression format defined by ISO/IEC 11172-3 alongside MPEG-1 Audio Layer I and MPEG-1 Audio Layer III.
+                                        {% elif slug == "OGA"%}
+                                        OGA files are essentially just the audio only element of an OGG file. It's a container format that contains the audio transport stream encoded in the Vorbis format.
+                                        {% endif %}
+                                    </h6>
+                                   
+                            </div>
+                    </div>
+                    <br>
+</div>
+            
                 {%endblock%}
