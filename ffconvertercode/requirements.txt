@@ -1,0 +1,8 @@
+pypandoc
+pydub
+img2pdf
+Pillow
+ffmpeg-python
+gunicorn
+django-widget-tweaks
+#https://pypi.org/project/pypandoc/
