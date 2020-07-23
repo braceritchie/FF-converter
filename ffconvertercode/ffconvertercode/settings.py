@@ -24,7 +24,7 @@ SECRET_KEY = 'ln4$l9l14@8l3=(y_-qhfr*4mehac5^x0(_s4#9b(@bf^a4acm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.209.54.19','ffconverter.tk', 'www.ffconverter.tk','www.hrii.tk','hrii.tk',"127.0.0.1"]
+ALLOWED_HOSTS = ['sleepy-woodland-95791.herokuapp.com','34.209.54.19','ffconverter.tk', 'www.ffconverter.tk','www.hrii.tk','hrii.tk',"127.0.0.1"]
 
 
 # Application definition

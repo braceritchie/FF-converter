@@ -2,6 +2,7 @@ pypandoc
 pydub
 img2pdf
 Pillow
+django
 ffmpeg-python
 gunicorn
 django-widget-tweaks
